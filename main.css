@@ -118,12 +118,171 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.footer{
-
-   
-    align-items: center;    
+.footer {
+    padding: 25px 0;
     text-align: center;
+    color: #777777;
+    font-size: 0.9rem;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
 }
+
+/* --- SECTION CONTACT (Inspirée du modèle & Thème Portfolio) --- */
+.contact-section {
+    padding: 20px 20px 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Grille des 4 cartes à gauche */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    z-index: 2; /* Passe au-dessus du bord du formulaire */
+    flex: 1;
+    max-width: 480px;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(46, 204, 113, 0.15);
+}
+
+.contact-icon {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card h4 {
+    margin: 5px 0 8px 0;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #1d1d1d;
+    letter-spacing: 1px;
+}
+
+.contact-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.4;
+}
+
+.status-badge {
+    display: inline-block;
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-top: 4px;
+}
+
+.contact-link {
+    color: #2ecc71;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #235b3e;
+    text-decoration: underline;
+}
+
+/* Bloc du formulaire à droite (superposition) */
+.contact-form-wrapper {
+    background-color: #1d1d1d;
+    color: #ffffff;
+    border-radius: 24px;
+    padding: 45px 40px 45px 70px;
+    margin-left: -50px; /* Effet de chevauchement comme la maquette */
+    z-index: 1;
+    flex: 1.2;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #1d1d1d;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+.btn-submit {
+    align-self: flex-start;
+    background-color: transparent;
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    padding: 14px 32px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #2ecc71;
+    color: #1d1d1d;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
 /* Conteneur principal */
 .skills-container {
     display: flex;
@@ -158,6 +317,25 @@ h2 {
     line-height: 1.6;
 }
 /* RESPONSIVE : Sur petit écran (tablette/mobile) */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-cards-grid {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .contact-form-wrapper {
+        margin-left: 0;
+        margin-top: 25px;
+        padding: 35px 25px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column-reverse; /* La photo passe au-dessus sur mobile */
@@ -171,5 +349,11 @@ h2 {
 
     .skills-container {
         flex-direction: column; /* Empile les cartes verticalement sur mobile */
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-cards-grid {
+        grid-template-columns: 1fr;
     }
 }
