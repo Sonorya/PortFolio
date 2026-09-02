@@ -1,6 +1,5 @@
 body {
     background-color: #f2f6f4;
-    padding-top: 90px; /* Augmentez cette valeur jusqu'à ce que votre H1 soit bien visible */
 }
 
 a {
@@ -26,7 +25,7 @@ a {
 .hero-section {
     background-color: #1d1d1d;
     color: #ffffff;
-    min-height: calc(100vh - 90px); /* Ouvre la section sur toute la hauteur de l'écran */
+    min-height: 100vh; /* Ouvre la section sur toute la hauteur de l'écran */
     display: flex;
     align-items: center;            /* Centre verticalement le contenu */
     padding: 40px 20px;
@@ -45,9 +44,14 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     gap: 40px;
+}
+
+.hero-left,
+.hero-right {
+    transform: translateY(48px);
 }
 
 .hero-left {
@@ -57,7 +61,6 @@ h2 {
 .hero-right {
     flex: 1;
     display: flex;
-    justify-content: center;
 }
 
 .code-tag {
